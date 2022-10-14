@@ -1,0 +1,96 @@
+# ----------------------------------------
+# This file contains the Forum Settings
+# chmod this file 755
+# ----------------------------------------
+
+# this needs to be set up for cookies
+$domain      = "hit-squad.net"; #!!!!!!!!
+
+$datapath    = "$rootpath/megaboard/default/admin";
+$imageurl    = "/megaboard/images";
+
+$path        = "$rootpath/cgi-bin/megaboard/";
+$messagepath = "$rootpath/megaboard/default/messages";
+$profilepath = "$rootpath/megaboard/default/profiles";
+$awardpath   = "$rootpath/megaboard/default/awards";
+
+# link to the main web page (not forum)
+$homepage    = "http://www.hit-squad.net";
+
+$forumurl    = "/megaboard/default/";
+
+# universal forum settings
+%settings    = (title => 'Megaboard DEFAULT Message Board', # text shown in title bar
+		htmlposts => 'on',	# allows/disallows html posting
+		frameheight => '80',	# specifies the frame height for top frame in frames mode
+		frames => 'off',	# this specifies the default viewing mode
+		maxlistsize => '10',	# max number of posts shown on front page per category
+		customheadfoot => 'off', # custom headers and footers
+		backgroundimage => '');
+
+# this part makes my weird code work
+# the %topic hash uses the directory names as the keys and the display names as values
+%topic       = (general_discussion   => 'General Discussion',
+                comments_suggestions => 'Comments & Suggestions',
+		debugging_room	     => 'Debugging Room');
+
+# make sure these 2 hashes keep the same order #################
+%topic2num   = (general_discussion   => '3',
+                comments_suggestions => '2',
+		debugging_room	     => '1');
+
+%num2topic   = (3 => 'general_discussion',
+                2 => 'comments_suggestions',
+		1 => 'debugging_room');
+
+%topicdescription = (general_discussion   => 'Talk Away',
+		     comments_suggestions => 'Got a beef? Post it here.',
+		     debugging_room	  => 'That bugzorz me');
+		 
+#################################################################
+
+@months = ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');
+
+# Colors
+# customize to your liking
+# ----------------------------------------
+
+%colors = (
+           links      => 'navy',
+	   vlink      => 'gray',
+	   footer     => 'gray',
+# message window #
+           messagetopoftable	 => 'gray',
+	   messagetoptext	 => 'white',
+           messageback		 => 'white',
+           messagetext		 => 'black',
+           messagewindowbacktext => 'black',
+           messagetableback1	 => '#efefef',
+           messagetableback2	 => '#dfdfdf',
+           messagetableborder	 => 'black',
+	   messagebacklink	 => 'blue',
+	   admincolor		 => 'maroon',
+	   quotetext		 => 'gray',
+# messagelist #
+           listback	 => 'white',
+           listbacktext  => 'black',
+           listtable     => '#efefef',
+           listtitle     => 'gray',
+           listtitletext => 'white',
+           listtabletext => 'black',
+	   listborder	 => 'black',
+# board functions #
+           funcback        => 'white',
+           funcbacktext    => 'black',
+           functable       => '#efefef',
+           functitle       => 'gray',
+	   functitletext   => 'black',
+           functabletext   => 'black',
+	   functableborder => 'black',
+	   funcformcolor   => 'white',
+	   funcformtext    => 'black',
+# top bar #
+           topbarback   => 'white',
+           topbartext   => 'black',
+           topbarlinks  => 'navy'
+);
